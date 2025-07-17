@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FoodietExpress</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>FoodieExpress 🍽️</h1>
+    <nav>
+      <a href="#" onclick="showSection('home')">Home</a>
+      <a href="#" onclick="showSection('cart')">Cart 🛒 (<span id="cart-count">0</span>)</a>
+      <a href="#" onclick="showSection('orders')">Orders 📦</a>
+    </nav>
+  </header>
+
+  <main id="home-section">
+    <div id="food-container"></div>
+  </main>
+
+  <section id="cart-section" class="hidden">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <button onclick="checkout()">Proceed to Checkout</button>
+  </section>
+
+  <section id="checkout-section" class="hidden">
+    <h2>Checkout</h2>
+    <form id="checkout-form">
+      <input type="text" id="cust-name" placeholder="Your Name" required />
+      <input type="text" id="cust-address" placeholder="Address" required />
+      <select id="payment" required>
+        <option value="">Select Payment</option>
+        <option value="cod">Cash on Delivery</option>
+        <option value="card">Card</option>
+      </select>
+      <button type="submit">Place Order</button>
+    </form>
+  </section>
+
+  <section id="orders-section" class="hidden">
+    <h2>Past Orders</h2>
+    <ul id="past-orders"></ul>
+  </section>
+
+  <footer>© 2025 FoodietExpress</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
